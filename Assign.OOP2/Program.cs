@@ -20,6 +20,20 @@
             //because class store data in heap not stack,class support oop paradigms :inheritance and polymorphism
 
             #endregion
+           
+            #region Question 3
+            //3st answwr
+            //            a) Which class is the parent class?
+            //shipment is parent clss 
+            //b) Which class is the child class?
+            //Expressshipment is child
+
+            //c) What members are inherited by ExpressShipment?
+            //property : public strin TrackingCodde{get;set;}
+
+            //d) Why is inheritance better than duplicating the same code in multiple classes?
+            //inheritance make reusability,easier maintanance,reducing errors
+            #endregion
 
 
         }
