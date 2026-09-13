@@ -12,7 +12,15 @@
             //default const: has if no |  always has default
             //constructors   |            constructors
             //             |
+
             #endregion
+            #region Question 1 b
+            //2st answer
+            //b) Why are classes more suitable than structs for large applications?
+            //because class store data in heap not stack,class support oop paradigms :inheritance and polymorphism
+
+            #endregion
+
 
         }
     }
