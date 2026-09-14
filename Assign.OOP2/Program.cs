@@ -1,4 +1,6 @@
-﻿namespace Assign.OOP2
+﻿using System.Transactions;
+
+namespace Assign.OOP2
 {
     internal class Program
     {
@@ -20,7 +22,7 @@
             //because class store data in heap not stack,class support oop paradigms :inheritance and polymorphism
 
             #endregion
-           
+
             #region Question 3
             //3st answwr
             //            a) Which class is the parent class?
@@ -35,7 +37,38 @@
             //inheritance make reusability,easier maintanance,reducing errors
             #endregion
 
+            #region Parctical 
+            //practical
+            DeliveryCenter center = new DeliveryCenter("Cairo");
 
+            for (int i = 1; i <= 3; i++) {
+                Console.WriteLine("enter TrackingCode");
+                string Tcode=Console.ReadLine();
+
+                Console.WriteLine("Enter Description");
+                string desc = Console.ReadLine();
+
+                Console.WriteLine("Enter Weight");
+                decimal.TryParse(Console.ReadLine(), out decimal we);
+
+                Console.WriteLine("Enter DeliveryFee");
+                decimal.TryParse(Console.ReadLine(), out decimal dFee);
+
+                Console.WriteLine("Enter Destination");
+                string city=Console.ReadLine();
+
+                Console.WriteLine("Enter strert");
+                string street=Console.ReadLine();
+
+                Console.WriteLine("Enter BuildingNumber");
+                int.TryParse(Console.ReadLine(), out int buildN);
+
+               DeliveryAddress address=new DeliveryAddress(city,street,buildN);
+                Shipment shipment = new Shipment(Tcode,desc,we,dFee,address);
+                center.AddShipmnent(shipment)
+            }
+
+            #endregion
         }
     }
 }
