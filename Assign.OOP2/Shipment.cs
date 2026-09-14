@@ -99,7 +99,7 @@ namespace Assign.OOP2
             Console.WriteLine(Description);
             Console.WriteLine(Weight);
             Console.WriteLine(DeliveryFee);
-            Console.WriteLine(destination);
+            Console.WriteLine(destination.GetAddress());
             Console.WriteLine(EstimatedCost);
             
         }

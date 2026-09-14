@@ -38,7 +38,8 @@ namespace Assign.OOP2
             #endregion
 
             #region Parctical 
-            //practical
+            
+            //practical Answer
             DeliveryCenter center = new DeliveryCenter("Cairo");
 
             for (int i = 1; i <= 3; i++) {
@@ -65,9 +66,46 @@ namespace Assign.OOP2
 
                DeliveryAddress address=new DeliveryAddress(city,street,buildN);
                 Shipment shipment = new Shipment(Tcode,desc,we,dFee,address);
-                center.AddShipmnent(shipment)
+                center.AddShipmnent(shipment);
+            }
+            Shipment x= center["TKF-680"];
+            if (x!=null)
+            {
+                       Console.WriteLine("shipment found");
+            }
+            else
+            {
+                Console.WriteLine("shipment not found");
             }
 
+            Shipment z = center[6];
+            if (z != null)
+            {
+                Console.WriteLine("shipment found");
+            }
+            else {
+                Console.WriteLine("shipment not found");
+            }
+
+           if (center.RemoveShipment("TKF-680"))
+           {
+                Console.WriteLine("shipment removed");
+           }
+            else
+            {
+                Console.WriteLine("shipment not removed");
+            }
+
+            for (int i = 1; i <= 3; i++) { 
+               Shipment s= center[i];
+                if (s != null)
+                {
+                    s.Print();
+                }
+               
+            }
+            
+          
             #endregion
         }
     }

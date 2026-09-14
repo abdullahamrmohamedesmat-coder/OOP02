@@ -14,7 +14,7 @@ namespace Assign.OOP2
 
         public DeliveryCenter(string CentreName)
         {
-            CentreName = CentreName;
+            centreName = CentreName;
             Shipments = new Shipment[20];
             count = 0;
         }
@@ -84,24 +84,51 @@ namespace Assign.OOP2
             }
             int indexRemove = -1;
             for (int i = 0; i < count; i++) {
-                if (Shipments[i] != null && Shipments[i].TrackingCode== trackingCode)
+                if (Shipments[i] != null && Shipments[i].TrackingCode == trackingCode)
                 {
                     indexRemove = i;
                     break;
                 }
-            
+
             }
-            if (indexRemove > -1) { 
-              return false;
+            if (indexRemove == -1) {
+                return false;
             }
-            for (int i = 0; indexRemove < count - 1; i++) {
+            for (int i = indexRemove; i < count - 1; i++) {
 
                 Shipments[i] = Shipments[i + 1];
             }
-            Shipments[count - 1] = null; 
+            Shipments[count - 1] = null;
             count--;
             return true;
         }
+        //public bool this[string TrackingCode]{
+        //    get
+        //    {
+        //        if (string.IsNullOrEmpty(TrackingCode))
+        //        {
+        //            return false;
+        //        }
+        //        for (int i = 0; i < count; i++)
+        //        {
+        //            if (!string.IsNullOrEmpty(TrackingCode) && Shipments[i].TrackingCode == TrackingCode)
+        //            {
+        //                return true;
+        //            }
+        //        }
+        //        return false;
 
-    }
+
+        //    }
+
+        public void PrintShipments()
+        {
+            for (int i = 0; i < count; i++)
+            {
+
+                Shipments[i].Print();
+
+            }
+        }
+      }
 }
